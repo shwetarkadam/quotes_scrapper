@@ -29,12 +29,7 @@ def index():
             bigboxes = goodreads_html.findAll("div", {"class": "quote mediumText"})
             #del bigboxes[0:3]
             box = bigboxes[0]
-            #productLink = "https://www.flipkart.com" + box.div.div.div.a['href']
-            #prodRes = requests.get(productLink)
-            #prodRes.encoding = 'utf-8'
-            #prod_html = bs(prodRes.text, "html.parser")
-            #print(prod_html)
-            #commentboxes = prod_html.find_all('div', {'class': "_3nrCtb"})
+        
 
             filename = searchString + ".csv"
             fw = open(filename, "w")
@@ -51,7 +46,7 @@ def index():
                     name = 'No Name'
 
                 try:
-                    # rating.encode(encoding='utf-8')
+                   
                     quotes =  commentbox.div.text
                     final_quotes = re.findall(r'“(.*?)(?<!\\)”', quotes)
                     final_quotes = ' '.join([str(elem) for elem in final_quotes])
