@@ -78,7 +78,8 @@ def index():
             print('The Exception message is: ', e)
             return 'something is wrong'
     # return render_template('results.html')
-
+    else if request.method == 'GET':
+        print('Method is GET')
     else:
         return render_template('index.html')
 
